@@ -55,9 +55,11 @@ public class MainActivity extends AppCompatActivity {
         for (int n : numberBtnsID) {
             findViewById(n).setOnClickListener(v -> {
                 Button btn = (Button) v;
-
-                if (inputTextView.getText().equals(DEFAULT_VALUE)) {
-                    inputTextView.setText("");
+                String s1 = inputTextView.getText().toString();
+                String s2 = DEFAULT_VALUE;
+                String s3 = "";
+                if (s1.equals(s2)) {
+                    inputTextView.setText(s3);
                 }
 
                 setTextStr((btn.getText().toString()));
@@ -75,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initDotBtn() {
         findViewById(R.id.dotBtn).setOnClickListener(v -> {
-            setTextStr(".");
+            updateText(calc.checkNumsBeforeDot(inputTextView.getText().toString()));
         });
     }
 
@@ -109,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateText(String s) {
+        if (s.equals(DEFAULT_VALUE)) {
+            return;
+        }
         sb = new StringBuilder(s);
         inputTextView.setText(s);
     }
