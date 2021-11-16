@@ -6,16 +6,16 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/settingsTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:gravity="end"
+        android:gravity="start"
         android:text="@string/settings"
         android:textSize="@dimen/settingsTextView_text_size" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/inputTextView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -30,54 +30,34 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/clearBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
             android:text="@string/clear_btn_text"
-            android:textColor="#F44336"
-            android:textSize="@dimen/btn_text_size" />
+            android:textColor="#F44336" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/plusMinBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/plus_min_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/plus_min_btn_text"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/percentBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/percent_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/percent_btn_text" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/divBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/div_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/div_btn_text"/>
 
     </LinearLayout>
 
@@ -86,54 +66,33 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/sevenBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/seven_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/seven_btn_text" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/eightBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/eight_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/eight_btn_text" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/nineBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/nine_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/nine_btn_text" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/multBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/multiply_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/multiply_btn_text" />
 
     </LinearLayout>
 
@@ -142,54 +101,33 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/fourBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/four_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/four_btn_text" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/fiveBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/five_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/five_btn_text" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/sixBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/six_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/six_btn_text" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/subBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/subtraction_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/subtraction_btn_text" />
 
     </LinearLayout>
 
@@ -198,54 +136,33 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/oneBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/one_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/one_btn_text" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/twoBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/two_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/two_btn_text" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/threeBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/three_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/three_btn_text"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/additionBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/addition_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/addition_btn_text" />
 
     </LinearLayout>
 
@@ -254,54 +171,34 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/zeroBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/zero_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/zero_btn_text" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/doubleZeroBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/double_zero_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/double_zero_btn_text"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/dotBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
-            android:text="@string/dot_btn_text"
-            android:textColor="@color/digits_color"
-            android:textSize="@dimen/btn_text_size" />
+            android:text="@string/dot_btn_text" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/resultBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:fontFamily="sans-serif"
             android:text="@string/result_btn_text"
-            android:textColor="#FF9800"
-            android:textSize="@dimen/btn_text_size" />
+            android:textColor="#FF9800"/>
 
     </LinearLayout>
 

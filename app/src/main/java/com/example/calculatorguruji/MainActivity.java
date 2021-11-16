@@ -2,10 +2,14 @@ package com.example.calculatorguruji;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.google.android.material.radiobutton.MaterialRadioButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         inputTextView = findViewById(R.id.inputTextView);
@@ -49,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         initPercentBtn();
         initDotBtn();
         initResultBtn();
+
     }
 
     private void initNumberBtns() {
