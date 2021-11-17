@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="btn_text_size">35sp</dimen>
+    <dimen name="settingsTextView_text_size">20sp</dimen>
+    <dimen name="inputTextView_text_size">60sp</dimen>
+    <dimen name="radio_btn_text_size">25sp</dimen>
 </resources>
