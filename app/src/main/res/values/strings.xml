@@ -22,4 +22,7 @@
     <string name="settings">Settings</string>
     <string name="first_element">ॐ</string>
     <string name="double_zero_btn_text">00</string>
+    <string name="choose_theme">Choose theme:</string>
+    <string name="white_theme">White theme</string>
+    <string name="dark_theme">Dark theme</string>
 </resources>

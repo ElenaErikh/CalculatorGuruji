@@ -2,6 +2,7 @@ package com.example.calculatorguruji;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Arrays;
 
 public class Calculator {
     private final String DEFAULT_VALUE;
@@ -20,6 +21,33 @@ public class Calculator {
             }
         }
         return DEFAULT_VALUE;
+    }
+
+    public String checkNumsBeforeDot(String s) {
+        if (s.startsWith("0")) {
+            return trimZeroBeforeDot(s);
+        }
+        if (s.equals(DEFAULT_VALUE) || s == null) {
+            return "0.";
+        }
+        return s + ".";
+    }
+
+    private String trimZeroBeforeDot(String s) {
+            int firstNonZeroAtDigit = 0;
+            char[] charArr = s.toCharArray();
+            for (int i = 0; i < charArr.length; i++) {
+                if (!String.valueOf(charArr[i]).equalsIgnoreCase("0")) {
+                    firstNonZeroAtDigit = i;
+                    break;
+                }
+            }
+            if(firstNonZeroAtDigit == 0) {
+                return "0.";
+            }
+
+            char [] newArray = Arrays.copyOfRange(charArr, firstNonZeroAtDigit, charArr.length);
+            return new String(newArray) + ".";
     }
 
     public String calcPercent(String s1, String s2, Symbols smb) {
