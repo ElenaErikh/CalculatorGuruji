@@ -1,28 +1,29 @@
 <resources>
-    <string name="app_name">CalculatorGuruji</string>
-    <string name="clear_btn_text">C</string>
-    <string name="plus_min_btn_text">±</string>
-    <string name="percent_btn_text">%</string>
-    <string name="div_btn_text">÷</string>
-    <string name="seven_btn_text">7</string>
-    <string name="eight_btn_text">8</string>
-    <string name="nine_btn_text">9</string>
-    <string name="multiply_btn_text">×</string>
-    <string name="four_btn_text">4</string>
-    <string name="five_btn_text">5</string>
-    <string name="six_btn_text">6</string>
-    <string name="subtraction_btn_text">-</string>
-    <string name="one_btn_text">1</string>
-    <string name="two_btn_text">2</string>
-    <string name="three_btn_text">3</string>
-    <string name="addition_btn_text">+</string>
-    <string name="zero_btn_text">0</string>
-    <string name="dot_btn_text">.</string>
-    <string name="result_btn_text">=</string>
+    <string name="app_name" translatable="false">CalculatorGuruji</string>
+    <string name="clear_btn_text" translatable="false">C</string>
+    <string name="plus_min_btn_text" translatable="false">±</string>
+    <string name="percent_btn_text" translatable="false">%</string>
+    <string name="div_btn_text" translatable="false">÷</string>
+    <string name="seven_btn_text" translatable="false">7</string>
+    <string name="eight_btn_text" translatable="false">8</string>
+    <string name="nine_btn_text" translatable="false">9</string>
+    <string name="multiply_btn_text" translatable="false">×</string>
+    <string name="four_btn_text" translatable="false">4</string>
+    <string name="five_btn_text" translatable="false">5</string>
+    <string name="six_btn_text" translatable="false">6</string>
+    <string name="subtraction_btn_text" translatable="false">-</string>
+    <string name="one_btn_text" translatable="false">1</string>
+    <string name="two_btn_text" translatable="false">2</string>
+    <string name="three_btn_text" translatable="false">3</string>
+    <string name="addition_btn_text" translatable="false">+</string>
+    <string name="zero_btn_text" translatable="false">0</string>
+    <string name="dot_btn_text" translatable="false">.</string>
+    <string name="result_btn_text" translatable="false">=</string>
+    <string name="first_element" translatable="false">ॐ</string>
+    <string name="double_zero_btn_text" translatable="false">00</string>
     <string name="settings">Settings</string>
-    <string name="first_element">ॐ</string>
-    <string name="double_zero_btn_text">00</string>
     <string name="choose_theme">Choose theme:</string>
     <string name="white_theme">White theme</string>
     <string name="dark_theme">Dark theme</string>
+    <string name="back">Back</string>
 </resources>
