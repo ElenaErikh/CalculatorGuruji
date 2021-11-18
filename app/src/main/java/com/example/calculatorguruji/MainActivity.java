@@ -1,29 +1,31 @@
 package com.example.calculatorguruji;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.google.android.material.radiobutton.MaterialRadioButton;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ThemeChangerActivity {
 
     Calculator calc;
-    private TextView inputTextView;
+    protected static TextView inputTextView;
 
     private String str;
     private StringBuilder sb;
     private Symbols symbol;
+    private int themeNumber = 0;
 
     private final String DEFAULT_VALUE = "ॐ";
+
     private final int MAX_LENGTH = 5;
     private final int MIN_TEXT_SIZE = 45;
     private final int MAX_TEXT_SIZE = 60;
+    private final int requestCode = 6880;
+    protected static final String THEME_NUMBER = "THEME_NUMBER";
 
     private final int[] numberBtnsID = new int[]{R.id.oneBtn, R.id.twoBtn, R.id.threeBtn,
             R.id.fourBtn, R.id.fiveBtn, R.id.sixBtn, R.id.sevenBtn, R.id.eightBtn, R.id.nineBtn,
@@ -33,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        int themeCode = getIntent().getIntExtra(THEME_NUMBER, 0);
+        setTheme(getAppTheme(getCodeStyle(themeCode)));
+
         setContentView(R.layout.activity_main);
 
         inputTextView = findViewById(R.id.inputTextView);
@@ -40,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
         sb = new StringBuilder();
 
         setBtnListeners();
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        int themeCode = getIntent().getIntExtra(THEME_NUMBER, 0);
+        setTheme(getAppTheme(getCodeStyle(themeCode)));
     }
 
     private void setBtnListeners() {
@@ -54,7 +66,33 @@ public class MainActivity extends AppCompatActivity {
         initPercentBtn();
         initDotBtn();
         initResultBtn();
+        initSettingsTextView();
+    }
 
+    private void initSettingsTextView() {
+        TextView settingsTextView = findViewById(R.id.settingsTextView);
+        settingsTextView.setOnClickListener(v -> {
+            openSettingsActivityForResult();
+        });
+    }
+
+    private void openSettingsActivityForResult() {
+        Intent runSettings = new Intent(this, SettingsActivity.class);
+        startActivityForResult(runSettings, requestCode);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode != this.requestCode) {
+            super.onActivityResult(requestCode, resultCode, data);
+            return;
+        }
+
+        if (resultCode == RESULT_OK && data != null) {
+            int themeData = data.getIntExtra(THEME_NUMBER, themeNumber);
+            setAppTheme(themeData);
+            recreate();
+        }
     }
 
     private void initNumberBtns() {
@@ -133,5 +171,8 @@ public class MainActivity extends AppCompatActivity {
         sb.append(s);
         updateText(sb.toString());
     }
+
+
+
 
 }

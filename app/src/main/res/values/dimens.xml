@@ -4,4 +4,5 @@
     <dimen name="settingsTextView_text_size">20sp</dimen>
     <dimen name="inputTextView_text_size">60sp</dimen>
     <dimen name="radio_btn_text_size">25sp</dimen>
+    <dimen name="back_button_text_size">30sp</dimen>
 </resources>
