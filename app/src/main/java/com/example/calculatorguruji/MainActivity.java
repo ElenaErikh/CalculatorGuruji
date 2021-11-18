@@ -1,5 +1,6 @@
 package com.example.calculatorguruji;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import android.content.Intent;
@@ -46,6 +47,13 @@ public class MainActivity extends ThemeChangerActivity {
         setBtnListeners();
     }
 
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        int themeCode = getIntent().getIntExtra(THEME_NUMBER, 0);
+        setTheme(getAppTheme(getCodeStyle(themeCode)));
+    }
+
     private void setBtnListeners() {
 
         initNumberBtns();
@@ -83,6 +91,7 @@ public class MainActivity extends ThemeChangerActivity {
         if (resultCode == RESULT_OK && data != null) {
             int themeData = data.getIntExtra(THEME_NUMBER, themeNumber);
             setAppTheme(themeData);
+            recreate();
         }
     }
 

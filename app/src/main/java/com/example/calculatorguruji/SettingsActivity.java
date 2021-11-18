@@ -19,6 +19,12 @@ public class SettingsActivity extends ThemeChangerActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_settings);
 
+        initBackButton();
+
+        initThemeChooser();
+    }
+
+    private void initBackButton() {
         Button backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> {
             Intent intent = new Intent();
@@ -26,8 +32,6 @@ public class SettingsActivity extends ThemeChangerActivity {
             setResult(RESULT_OK, intent);
             finish();
         });
-
-        initThemeChooser();
     }
 
     private void initThemeChooser() {
