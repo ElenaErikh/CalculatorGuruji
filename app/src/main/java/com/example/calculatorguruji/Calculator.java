@@ -5,7 +5,7 @@ import java.math.RoundingMode;
 import java.util.Arrays;
 
 public class Calculator {
-    private final String DEFAULT_VALUE;
+    private final String DEFAULT_VALUE;;
 
     public Calculator() {
         DEFAULT_VALUE = "ॐ";

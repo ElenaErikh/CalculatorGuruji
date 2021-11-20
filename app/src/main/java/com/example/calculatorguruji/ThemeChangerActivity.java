@@ -36,10 +36,20 @@ public class ThemeChangerActivity extends AppCompatActivity {
                 .apply();
     }
 
+//    private int codeStyleToStyleId(int codeStyle){
+//        if (codeStyle == WhiteStyle) {
+//            return R.style.WhiteStyle;
+//        } else {
+//            return R.style.DarkStyle;
+//        }
+//    }
+
     private int codeStyleToStyleId(int codeStyle){
         if (codeStyle == WhiteStyle) {
+            MainActivity.inputTextView.setBackgroundResource(R.drawable.om1); // Выдает NullPointerException.
             return R.style.WhiteStyle;
         } else {
+            MainActivity.inputTextView.setBackgroundResource(R.drawable.om1dark);
             return R.style.DarkStyle;
         }
     }

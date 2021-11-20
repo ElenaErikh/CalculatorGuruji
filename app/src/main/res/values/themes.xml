@@ -23,7 +23,6 @@
         <item name="android:layout_margin">2dp</item>
         <item name="fontFamily">sans-serif</item>
         <item name="android:fontFamily">sans-serif</item>
-        <item name="background">@drawable/om1</item>
         <item name="colorPrimary">@color/white</item>
         <item name="colorOnPrimary">@color/digits_color</item>
         <item name="colorSecondary">@color/black</item>
@@ -33,8 +32,6 @@
     <style name="DarkStyle" parent="Theme.MaterialComponents.NoActionBar">
         <item name="colorPrimary">@color/dark_gray</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="background">@drawable/om1dark</item>
-
     </style>
 
 </resources>
