@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,14 +13,14 @@ import android.widget.TextView;
 public class MainActivity extends ThemeChangerActivity {
 
     Calculator calc;
-    protected static TextView inputTextView;
+    private TextView inputTextView;
 
     private String str;
     private StringBuilder sb;
     private Symbols symbol;
     private int themeNumber = 0;
 
-    private final String DEFAULT_VALUE = "ॐ";
+    private String DEFAULT_VALUE;
 
     private final int MAX_LENGTH = 5;
     private final int MIN_TEXT_SIZE = 45;
@@ -35,14 +36,16 @@ public class MainActivity extends ThemeChangerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        calc = new Calculator();
+        sb = new StringBuilder();
+        DEFAULT_VALUE = getResources().getString(R.string.first_element);
+
         int themeCode = getIntent().getIntExtra(THEME_NUMBER, 0);
         setTheme(getAppTheme(getCodeStyle(themeCode)));
 
         setContentView(R.layout.activity_main);
 
         inputTextView = findViewById(R.id.inputTextView);
-        calc = new Calculator();
-        sb = new StringBuilder();
 
         setBtnListeners();
     }
@@ -91,6 +94,24 @@ public class MainActivity extends ThemeChangerActivity {
         if (resultCode == RESULT_OK && data != null) {
             int themeData = data.getIntExtra(THEME_NUMBER, themeNumber);
             setAppTheme(themeData);
+
+            if (themeData == WhiteStyle) {
+                inputTextView.setBackgroundResource(R.drawable.om1);
+
+//                Drawable imgW = getResources().getDrawable(R.drawable.om1dark);
+//                inputTextView.setCompoundDrawables(imgW, null, null, null);
+
+                //inputTextView.setBackground(getResources().getDrawable(R.drawable.om1));
+            } else {
+                inputTextView.setBackgroundResource(R.drawable.om1dark);
+
+//                Drawable imgD = getResources().getDrawable(R.drawable.om1dark);
+//                inputTextView.setCompoundDrawables(imgD, null, null, null);
+
+                //inputTextView.setBackground(getResources().getDrawable(R.drawable.om1dark));
+                //inputTextView.setBackgroundResource(R.drawable.om1dark);
+            }
+
             recreate();
         }
     }
@@ -121,13 +142,13 @@ public class MainActivity extends ThemeChangerActivity {
 
     private void initDotBtn() {
         findViewById(R.id.dotBtn).setOnClickListener(v -> {
-            updateText(calc.checkNumsBeforeDot(inputTextView.getText().toString()));
+            updateText(calc.checkNumsBeforeDot(inputTextView.getText().toString(), DEFAULT_VALUE));
         });
     }
 
     private void initPercentBtn() {
         findViewById(R.id.percentBtn).setOnClickListener(v -> {
-            updateText(calc.calcPercent(str, inputTextView.getText().toString(), symbol));
+            updateText(calc.calcPercent(str, inputTextView.getText().toString(), symbol, DEFAULT_VALUE));
             sb = new StringBuilder();
         });
     }
@@ -142,13 +163,13 @@ public class MainActivity extends ThemeChangerActivity {
 
     private void initPlusMinBtn() {
         findViewById(R.id.plusMinBtn).setOnClickListener(v -> {
-             updateText(calc.makeNumberNegative(inputTextView.getText().toString()));
+            updateText(calc.makeNumberNegative(inputTextView.getText().toString(), DEFAULT_VALUE));
         });
     }
 
     private void initResultBtn() {
         findViewById(R.id.resultBtn).setOnClickListener(v -> {
-            updateText(calc.getResult(str, inputTextView.getText().toString(), symbol));
+            updateText(calc.getResult(str, inputTextView.getText().toString(), symbol, DEFAULT_VALUE));
             str = null;
             sb = new StringBuilder();
         });
@@ -171,8 +192,6 @@ public class MainActivity extends ThemeChangerActivity {
         sb.append(s);
         updateText(sb.toString());
     }
-
-
 
 
 

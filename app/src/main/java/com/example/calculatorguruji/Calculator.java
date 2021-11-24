@@ -5,13 +5,8 @@ import java.math.RoundingMode;
 import java.util.Arrays;
 
 public class Calculator {
-    private final String DEFAULT_VALUE;;
 
-    public Calculator() {
-        DEFAULT_VALUE = "ॐ";
-    }
-
-    public String makeNumberNegative(String str) {
+    public String makeNumberNegative(String str, String defVal) {
         if (str != null) {
             try {
                 double d = (Double.parseDouble(str)) * -1;
@@ -20,14 +15,14 @@ public class Calculator {
                 e.printStackTrace();
             }
         }
-        return DEFAULT_VALUE;
+        return defVal;
     }
 
-    public String checkNumsBeforeDot(String s) {
+    public String checkNumsBeforeDot(String s, String defVal) {
         if (s.startsWith("0")) {
             return trimZeroBeforeDot(s);
         }
-        if (s.equals(DEFAULT_VALUE) || s == null) {
+        if (s.equals(defVal) || s == null) {
             return "0.";
         }
         return s + ".";
@@ -50,7 +45,7 @@ public class Calculator {
             return new String(newArray) + ".";
     }
 
-    public String calcPercent(String s1, String s2, Symbols smb) {
+    public String calcPercent(String s1, String s2, Symbols smb, String defVal) {
         if (s1 != null && s2 != null && smb != null) {
             try {
                 double val1 = Double.parseDouble(s1);
@@ -60,17 +55,17 @@ public class Calculator {
                 e.printStackTrace();
             }
         }
-        return DEFAULT_VALUE;
+        return defVal;
     }
 
-    public String getResult(String s1, String s2, Symbols smb) {
+    public String getResult(String s1, String s2, Symbols smb, String defVal) {
         if (s1 != null && s2 != null && smb != null) {
-            return calcResult(s1, s2, smb);
+            return calcResult(s1, s2, smb, defVal);
         }
-        return DEFAULT_VALUE;
+        return defVal;
     }
 
-    private String calcResult(String s1, String s2, Symbols smb) {
+    private String calcResult(String s1, String s2, Symbols smb, String defVal) {
 
         try {
 
@@ -92,7 +87,7 @@ public class Calculator {
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
-        return DEFAULT_VALUE;
+        return defVal;
     }
 
     public String convertValue(Double d) {
